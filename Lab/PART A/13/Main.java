@@ -31,3 +31,56 @@ class Main extends Thread {
         System.out.println("Is main Alive?"+Thread.currentThread().isAlive());
     }
 }
+
+
+
+
+
+
+
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+import java.util.*;
+
+class mythreadq13 extends Thread {
+    public void run() {
+        System.out.println(Thread.currentThread().getName() + " is running!");
+    }
+
+    public static void main(String[] args) {
+        mythreadq13 t1 = new mythreadq13();
+        System.out.println(Thread.currentThread().getName());
+        t1.start();
+        try {
+            Thread.sleep(2500);
+        } catch (InterruptedException e) {
+            System.out.println(e);
+        }
+        System.out.println(t1.isAlive());
+        mythreadq13 t2 = new mythreadq13();
+        System.out.println(Thread.currentThread().getName());
+        t2.setPriority(8);
+        System.out.println(t2.isAlive());
+        System.out.println(t1.getPriority() + " ==== " + t2.getPriority());
+        System.out.println(Thread.currentThread().getName() + " is alive.");
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
